@@ -6,7 +6,7 @@ while (false !== ($line = fgets($stdin))) {
 	$paste .= $line;
 }
 $url = "http://p.of.je/submit.php";
-$myvars = "paste=" . $paste;
+$myvars = "paste=" . urlencode($paste);
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $myvars);
